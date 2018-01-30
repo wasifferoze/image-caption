@@ -20,3 +20,7 @@ def load_image_data(dir_name):
         img_id = name.split('.')[0]
         images_dict[img_id] = image
     return images_dict
+# test code
+dir_name = "data/Flicker8k_Dataset"
+test_img = load_image_data(dir_name)
+print(len(test_img))

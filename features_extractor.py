@@ -26,8 +26,8 @@ def extract_features(img_dir):
 
 
 # extract features from all images
-img_dir = 'Flicker8k_Dataset'
-features = extract_features(directory)
+img_dir = 'data/Flicker8k_Dataset'
+features = extract_features(img_dir)
 print('Extracted Features: %d' % len(features))
 # save to file
 dump(features, open('features.pkl', 'wb'))
