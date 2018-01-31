@@ -1,6 +1,5 @@
 import string
 
-
 # load doc files
 def load_doc(file_name):
     file = open(file_name, 'r')
@@ -50,3 +49,20 @@ def save_doc(descriptions, filename):
     file = open(filename, 'w')
     file.write(data)
     file.close()
+
+
+# to use this code
+file_name = 'data/Flickr8k_text/Flickr8k.token.txt'
+# load file
+doc = load_doc(file_name)
+# parse description
+descriptions = load_desc(doc)
+print ('Loaded: %d' % len(descriptions))
+# clean here
+clean_descriptions(descriptions)
+# vocabulary summary
+all_tokens = ' '.join(descriptions.values()).split()
+vocab = set(all_tokens)
+print ('Vocabulary Size: %d' % len(vocab))
+# save doc
+save_doc(descriptions, 'captions.txt')
